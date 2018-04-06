@@ -1,9 +1,8 @@
 import axios from 'axios'
-
-const UPDATE_AVATAR_URL = 'http://localhost:3008/paper'
+import { UPLOAD_URL } from '../Settings.js'
 
 export const sendRequest = formData => {
-  axios.post(UPDATE_AVATAR_URL, formData).then(res => {
+  axios.post(UPLOAD_URL, formData).then(res => {
     console.log('request sent')
   })
 }
