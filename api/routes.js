@@ -1,5 +1,4 @@
 const User = require('./controllers/user')
-const Post = require('./controllers/post')
 const multer = require('multer')
 
 module.exports = app => {
@@ -9,11 +8,6 @@ module.exports = app => {
   app.get('/user/logout', User.logout)
   app.get('/users', User.all)
   app.get('/user/:id', User.getById)
-
-  // post
-  app.post('/post', Post.new)
-  app.delete('/post/:id', Post.remove)
-  app.get('/posts', Post.all)
 
   // upload
   const uploadPaper = multer({ dest: './public/uploads/paper' })
