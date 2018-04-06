@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { sendRequest } from './utils/upload.js'
-import styled from 'styled-components'
 
 class App extends Component {
   state = {
