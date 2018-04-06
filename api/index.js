@@ -12,7 +12,7 @@ app.use(morgan('tiny'))
 mongoose.Promise = Promise
 
 // mongodb connection
-mongoose.connect('mongodb://localhost:27017/sandbox', {
+mongoose.connect('mongodb://localhost:27017/ycw', {
   useMongoClient: true,
   promiseLibrary: global.Promise
 })
@@ -40,6 +40,6 @@ app.use(bodyParser.json())
 const routes = require('./routes')
 routes(app)
 
-app.listen(3008, () => {
+app.listen(3018, () => {
   console.log('running on port 3008')
 })
