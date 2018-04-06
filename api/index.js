@@ -41,5 +41,5 @@ const routes = require('./routes')
 routes(app)
 
 app.listen(3018, () => {
-  console.log('running on port 3008')
+  console.log('running on port 3018')
 })

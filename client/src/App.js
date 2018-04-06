@@ -18,6 +18,7 @@ class App extends Component {
     reader.onload = e => {
       console.log('inside onload====', e.target.result)
       formData.append('paper', file)
+      formData.append('authorname', 'myUserName')
       sendRequest(formData)
     }
     reader.readAsDataURL(file)
