@@ -1,14 +1,24 @@
 import React, { Component } from 'react'
 import { sendRequest } from './utils/upload.js'
+import styled from 'styled-components'
 
 class App extends Component {
+  state = {
+    selectedFileName: ''
+  }
+
   handleChange = e => {
-    console.log(e)
     const file = e.target.files[0]
+    console.log('xxx', file.name)
+    this.setState({
+      selectedFileName: file.name
+    })
+
     const reader = new FileReader()
     let formData = new FormData()
     reader.onload = e => {
       console.log('inside onload====', e.target.result)
+      formData.append('paper', file)
       sendRequest(formData)
     }
     reader.readAsDataURL(file)
@@ -16,6 +26,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {this.state.selectedFileName}
         <input type="file" onChange={this.handleChange} />
       </div>
     )
